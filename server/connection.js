@@ -29,6 +29,12 @@ connection.connect(function(err) {
     console.log("Table created", result);
   });
 
+  var ids_table = 'CREATE TABLE ids(id int primary key auto_increment,  table_from VARCHAR(40),  last_id INTEGER(4), created_at DATETIME, updated_at DATETIME )';
+  connection.query(ids_table, function (err, result) {
+    if (err) throw err;
+    console.log("IDS Table created", result);
+  });
+
   connection.end();
 
 });
